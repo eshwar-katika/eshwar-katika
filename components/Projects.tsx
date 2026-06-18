@@ -53,7 +53,7 @@ const projects = [
     color: 'purple',
     gradient: 'linear-gradient(135deg, rgba(124,58,237,0.15), rgba(0,212,255,0.05))',
     borderColor: 'rgba(124,58,237,0.25)',
-    github: null,
+    github: 'https://github.com/eshwar-katika/Deepfake-Detection',
     live: null,
   },
   {
