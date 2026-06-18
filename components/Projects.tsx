@@ -32,7 +32,7 @@ const projects = [
     color: 'cyan',
     gradient: 'linear-gradient(135deg, rgba(0,212,255,0.15), rgba(6,214,160,0.05))',
     borderColor: 'rgba(0,212,255,0.25)',
-    github: 'https://github.com/katikaeshwar9515/Django-Admin-HoneyPot',
+    github: 'https://github.com/eshwar-katika/Django-Admin-HoneyPot',
     live: null,
   },
   {
@@ -74,7 +74,7 @@ const projects = [
     color: 'green',
     gradient: 'linear-gradient(135deg, rgba(6,214,160,0.12), rgba(124,58,237,0.05))',
     borderColor: 'rgba(6,214,160,0.25)',
-    github: 'https://github.com/katikaeshwar9515/Career-Hub-BIET',
+    github: 'https://github.com/eshwar-katika/Career-Hub-BIET',
     live: null,
   },
 ];
