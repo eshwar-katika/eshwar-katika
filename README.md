@@ -49,10 +49,20 @@
 
 ## 📂 Featured Projects
 
+### 🛡️ [AiPrep - AI Mock Platform](https://github.com/eshwar-katika/AiPrep)
+Full-stack mock interview system with browser-native Web Speech API voice practice and compile-time evaluations.
+* **Tech:** Java, Spring Boot, React, MySQL, OpenAI, Docker
+* **Key Features:** JWT stateless filters, Apache PDFBox text mining, local sandbox compile simulation, dynamic roadmap charts.
+
 ### 🛡️ [Django Admin HoneyPot System](https://github.com/eshwar-katika/Django-Admin-HoneyPot)
 Mimics a Django admin page to capture threat logs and block unauthorized attempts.
 * **Tech:** Python, Django, Docker, PostgreSQL
 * **Key Features:** Live threat analytics, automatic IP blacklisting middleware, CSV exports.
+
+### 👁️ [Deepfake Detection System](https://github.com/eshwar-katika/Deepfake-Detection)
+An end-to-end deep learning framework classifying manipulated media with feature attention models.
+* **Tech:** Python, Deep Learning, CNN, REST API, React
+* **Key Features:** Attention mechanisms, media processing pipeline, exportable classification metrics.
 
 ### 🎓 [Career Hub BIET](https://github.com/eshwar-katika/Career-Hub-BIET)
 Full-featured recruitment platform tailored for Bharat Institute of Engineering and Technology (BIET).

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { Shield, Eye, Briefcase, ExternalLink } from 'lucide-react';
+import { Shield, Eye, Briefcase, ExternalLink, Brain } from 'lucide-react';
 import styles from './Projects.module.css';
 
 // GitHub mark SVG (official shape)
@@ -14,6 +14,26 @@ function GitHubIcon({ size = 15 }: { size?: number }) {
 }
 
 const projects = [
+  {
+    id: 'aiprep',
+    title: 'AiPrep - AI Mock Platform',
+    icon: <Brain size={26} strokeWidth={1.6} />,
+    tagline: 'AI-Powered Interview Prep',
+    description:
+      'A full-stack mock interview platform. Uses Spring Security JWT, compiles & executes programming tasks locally, parses PDF resumes, and outputs tailored week-by-week learning roadmaps.',
+    highlights: [
+      'Stateless Spring Security JWT filters',
+      'Dual AI engine: OpenAI or local fallback',
+      'Zero-token Web Speech API mock booth',
+      'Integrated compiler sandbox & charts',
+    ],
+    tags: ['Java', 'Spring Boot', 'React', 'TypeScript', 'MySQL', 'OpenAI'],
+    color: 'purple',
+    gradient: 'linear-gradient(135deg, rgba(124,58,237,0.15), rgba(0,212,255,0.05))',
+    borderColor: 'rgba(124,58,237,0.25)',
+    github: 'https://github.com/eshwar-katika/AiPrep',
+    live: null,
+  },
   {
     id: 'honeypot',
     title: 'Django Admin HoneyPot System',
@@ -50,9 +70,9 @@ const projects = [
       'Detection report export',
     ],
     tags: ['Python', 'Deep Learning', 'CNN', 'REST API', 'React'],
-    color: 'purple',
-    gradient: 'linear-gradient(135deg, rgba(124,58,237,0.15), rgba(0,212,255,0.05))',
-    borderColor: 'rgba(124,58,237,0.25)',
+    color: 'cyan',
+    gradient: 'linear-gradient(135deg, rgba(0,212,255,0.15), rgba(6,214,160,0.05))',
+    borderColor: 'rgba(0,212,255,0.25)',
     github: 'https://github.com/eshwar-katika/Deepfake-Detection',
     live: null,
   },
