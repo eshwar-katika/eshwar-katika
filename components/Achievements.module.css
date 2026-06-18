@@ -1,0 +1,204 @@
+.achieveSection {
+  background: linear-gradient(to bottom, var(--bg), var(--bg-alt));
+}
+
+/* Main Card */
+.mainCard {
+  position: relative;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(0,212,255,0.2);
+  padding: 52px 48px;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  background: linear-gradient(135deg, rgba(0,212,255,0.06), rgba(124,58,237,0.06));
+  backdrop-filter: blur(20px);
+}
+
+.cardBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 0% 50%, rgba(0,212,255,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.cardGlow {
+  position: absolute;
+  top: -60px;
+  left: 100px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,212,255,0.12) 0%, transparent 70%);
+  pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Trophy */
+.trophyWrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+}
+.trophyRing {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, var(--primary), var(--secondary)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: spin-slow 6s linear infinite;
+}
+.trophyInner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(124,58,237,0.15));
+  border: 1px solid rgba(0,212,255,0.25);
+  display: grid;
+  place-items: center;
+}
+.trophyEmoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+.trophyPulse {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,212,255,0.15);
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+/* Text block */
+.textBlock { flex: 1; }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 100px;
+  background: rgba(6,214,160,0.1);
+  border: 1px solid rgba(6,214,160,0.25);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.achieveTitle {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 800;
+  margin-bottom: 12px;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.achieveDesc {
+  color: var(--text-dim);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 28px;
+  max-width: 560px;
+}
+.achieveDesc strong { color: var(--primary); font-weight: 600; }
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.metaIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  opacity: 0.85;
+}
+.metaValue {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
+.metaLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+}
+.metaDivider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.1);
+  flex-shrink: 0;
+}
+
+/* Mini Cards */
+.miniStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.miniCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 22px;
+  cursor: default;
+}
+.miniIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--primary);
+  opacity: 0.85;
+}
+.miniLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 3px;
+}
+.miniValue {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+.miniOrg {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .mainCard { flex-direction: column; align-items: flex-start; padding: 32px 24px; gap: 28px; }
+  .metaRow { gap: 12px; }
+  .metaDivider { display: none; }
+  .miniStats { grid-template-columns: 1fr; }
+}

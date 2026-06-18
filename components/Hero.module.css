@@ -1,0 +1,244 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: var(--nav-height);
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Background Blobs */
+.bgBlob1 {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: min(600px, 60vw);
+  height: min(600px, 60vw);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite;
+}
+.bgBlob2 {
+  position: absolute;
+  bottom: 5%;
+  left: -8%;
+  width: min(500px, 50vw);
+  height: min(500px, 50vw);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  animation: float 10s ease-in-out infinite reverse;
+}
+.bgBlob3 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: min(300px, 30vw);
+  height: min(300px, 30vw);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(6, 214, 160, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+  animation: float 6s ease-in-out 2s infinite;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: rgba(6, 214, 160, 0.08);
+  border: 1px solid rgba(6, 214, 160, 0.25);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent);
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s var(--ease-out) both;
+}
+.badgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  position: relative;
+  flex-shrink: 0;
+}
+.badgeDot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.4;
+  animation: pulse-ring 1.5s ease-out infinite;
+}
+
+/* Name */
+.name {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
+  animation: fadeInUp 0.6s 0.2s var(--ease-out) both;
+}
+.lastName {
+  color: var(--text-dim);
+}
+
+/* Role */
+.roleWrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  color: var(--text-dim);
+  margin-bottom: 28px;
+  min-height: 2.2em;
+  animation: fadeInUp 0.6s 0.35s var(--ease-out) both;
+}
+.rolePrefix { white-space: nowrap; }
+.roleDynamic {
+  color: var(--primary);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--primary);
+  margin-left: 2px;
+  vertical-align: middle;
+  border-radius: 1px;
+  animation: blink 0.9s step-end infinite;
+}
+
+/* Description */
+.description {
+  max-width: 580px;
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  color: var(--text-dim);
+  line-height: 1.8;
+  margin-bottom: 40px;
+  animation: fadeInUp 0.6s 0.5s var(--ease-out) both;
+}
+.description strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* CTA Group */
+.ctaGroup {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+  animation: fadeInUp 0.6s 0.65s var(--ease-out) both;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.6s 0.8s var(--ease-out) both;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: relative;
+  padding-left: 16px;
+}
+.stat::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
+  border-radius: 1px;
+}
+.statValue {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text);
+  letter-spacing: -0.03em;
+}
+.statLabel {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+}
+
+/* Scroll indicator */
+.scrollDown {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  animation: fadeIn 1s 1.2s both;
+  transition: color 0.2s;
+  z-index: 1;
+}
+.scrollDown:hover { color: var(--primary); }
+.scrollMouse {
+  width: 24px;
+  height: 38px;
+  border: 2px solid currentColor;
+  border-radius: 12px;
+  display: grid;
+  place-items: start center;
+  padding-top: 6px;
+  opacity: 0.6;
+}
+.scrollWheel {
+  width: 4px;
+  height: 8px;
+  background: currentColor;
+  border-radius: 2px;
+  animation: float 1.5s ease-in-out infinite;
+}
+
+@media (max-width: 640px) {
+  .name { font-size: clamp(2.5rem, 12vw, 4rem); }
+  .stats { gap: 20px; }
+  .ctaGroup { gap: 10px; }
+  .ctaGroup .btn { font-size: 13px !important; padding: 10px 18px !important; }
+}

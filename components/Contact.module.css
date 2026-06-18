@@ -1,0 +1,139 @@
+.contactSection {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to bottom, var(--bg-alt), var(--bg));
+}
+
+.bgBlob {
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: min(500px, 60vw);
+  height: min(500px, 60vw);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,58,237,0.1) 0%, transparent 70%);
+  pointer-events: none;
+  animation: float 9s ease-in-out infinite;
+}
+
+/* Contact cards */
+.cardsRow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.contactCard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  border-radius: var(--radius-lg);
+  background: rgba(19,25,33,0.7);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  transition: transform 0.3s var(--ease-spring), border-color 0.3s, box-shadow 0.3s;
+}
+.contactCard:hover {
+  transform: translateX(6px);
+}
+
+.cardCyan:hover  { border-color: rgba(0,212,255,0.35); box-shadow: 0 0 30px rgba(0,212,255,0.08); }
+.cardPurple:hover{ border-color: rgba(124,58,237,0.35); box-shadow: 0 0 30px rgba(124,58,237,0.08); }
+.cardGreen:hover { border-color: rgba(6,214,160,0.35); box-shadow: 0 0 30px rgba(6,214,160,0.08); }
+
+.iconWrap {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.iconCyan   { background: rgba(0,212,255,0.1); color: var(--primary); border: 1px solid rgba(0,212,255,0.2); }
+.iconPurple { background: rgba(124,58,237,0.1); color: #A78BFA; border: 1px solid rgba(124,58,237,0.2); }
+.iconGreen  { background: rgba(6,214,160,0.1); color: var(--accent); border: 1px solid rgba(6,214,160,0.2); }
+
+.cardInfo { flex: 1 }
+.cardLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 2px;
+}
+.cardValue {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.cardDesc {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.cardActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.copyBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-out);
+}
+.copyBtn:hover { background: rgba(255,255,255,0.1); color: var(--text); }
+.copyBtn.copied { background: rgba(6,214,160,0.1); color: var(--accent); border-color: rgba(6,214,160,0.3); }
+
+/* CTA Banner */
+.ctaBanner {
+  position: relative;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(0,212,255,0.2);
+  overflow: hidden;
+  padding: 44px 48px;
+}
+.bannerBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,212,255,0.06), rgba(124,58,237,0.06));
+}
+.bannerContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.bannerText {}
+.bannerTitle {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+.bannerSub {
+  color: var(--text-dim);
+  font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+  .contactCard { flex-wrap: wrap; padding: 20px; }
+  .cardActions { width: 100%; justify-content: flex-end; }
+  .ctaBanner { padding: 28px 20px; }
+  .bannerContent { flex-direction: column; align-items: flex-start; gap: 20px; }
+}
